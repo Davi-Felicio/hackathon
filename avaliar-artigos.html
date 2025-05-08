@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Avaliar Artigos - SB Admin 2</title>
+
+  <!-- Fontes e estilos do template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-book"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Sistema de Artigos</div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Início</span>
+        </a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">Artigos</div>
+      <li class="nav-item">
+        <a class="nav-link" href="avaliar-artigos.html">
+          <i class="fas fa-fw fa-clipboard-check"></i>
+          <span>Avaliar Artigos</span>
+        </a>
+      </li>
+      <hr class="sidebar-divider d-none d-md-block">
+    </ul>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Avaliador</span>
+                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Sair
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Conteúdo da Avaliação -->
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10">
+              <div class="card mb-4">
+                <div class="card-header">Avaliação de Artigos Atribuídos</div>
+                <div class="card-body">
+                  <div class="mb-4">
+                    <h5><strong>Título do Artigo:</strong> Inteligência Artificial na Educação</h5>
+                    <p><strong>Área Temática:</strong> Tecnologias Educacionais</p>
+                    <p><strong>Resumo:</strong> Este artigo discute o uso da IA em ambientes educacionais...</p>
+                    <a href="docs/artigo123.pdf" target="_blank" class="btn btn-outline-primary btn-sm">
+                      Ver PDF do Artigo
+                    </a>
+                  </div>
+
+                  <form id="review-form" onsubmit="handleReviewSubmit(event)">
+                    <div class="form-group">
+                      <label for="score">Nota (0 a 10)</label>
+                      <input type="number" min="0" max="10" step="0.1" class="form-control" id="score" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="commentsAuthor">Comentários para os Autores</label>
+                      <textarea class="form-control" id="commentsAuthor" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="commentsCoordinator">Comentários para o Coordenador</label>
+                      <textarea class="form-control" id="commentsCoordinator" rows="2" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="finalDecision">Decisão Final</label>
+                      <select class="form-control" id="finalDecision" required>
+                        <option value="">Selecione...</option>
+                        <option value="aprovado">Aprovar</option>
+                        <option value="revisao">Solicitar Revisão</option>
+                        <option value="rejeitado">Rejeitar</option>
+                      </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Enviar Avaliação</button>
+                    <p id="reviewMessage" class="mt-3 text-success" style="display: none;">Avaliação enviada com sucesso!</p>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="text-center my-auto">
+            <span>Copyright © Faculdade Biopark 2025</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Logout Modal -->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sair da Conta?</h5>
+          <button class="close" type="button" data-dismiss="modal">
+            <span>×</span>
+          </button>
+        </div>
+        <div class="modal-body">Tem certeza que deseja sair?</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" href="login.html">Sair</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <script>
+    function handleReviewSubmit(e) {
+      e.preventDefault();
+      document.getElementById("reviewMessage").style.display = "block";
+    }
+  </script>
+
+</body>
+
+</html>
