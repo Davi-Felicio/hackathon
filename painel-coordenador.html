@@ -104,33 +104,7 @@
                       <th>Avaliações</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>IA na Educação</td>
-                      <td>Maria Souza, João Lima</td>
-                      <td>Tecnologia</td>
-                      <td><span class="badge badge-warning">Em Avaliação</span></td>
-                      <td><a href="docs/artigo123.pdf" class="btn btn-outline-primary btn-sm" target="_blank">Abrir</a></td>
-                      <td>
-                        <button class="btn btn-info btn-sm" data-toggle="collapse" data-target="#avaliacoes1">Ver</button>
-                      </td>
-                    </tr>
-                    <tr id="avaliacoes1" class="collapse">
-                      <td colspan="6">
-                        <div class="card card-body">
-                          <p><strong>Avaliador 1:</strong></p>
-                          <p><strong>Nota:</strong> 8.5</p>
-                          <p><strong>Para os autores:</strong> Excelente trabalho, apenas revisar gramática.</p>
-                          <p><strong>Comentário interno:</strong> Artigo promissor, considerar destaque.</p>
-                          <hr>
-                          <p><strong>Avaliador 2:</strong></p>
-                          <p><strong>Nota:</strong> 7.0</p>
-                          <p><strong>Para os autores:</strong> Boa proposta, mas faltam referências atuais.</p>
-                          <p><strong>Comentário interno:</strong> Verificar originalidade.</p>
-                        </div>
-                      </td>
-                    </tr>
-                    <!-- Repetir estrutura para mais artigos -->
+                  <tbody id="submissoes-recebidas">
                   </tbody>
                 </table>
               </div>
@@ -169,6 +143,7 @@
   </div>
 
   <!-- Scripts -->
+  <script src="scripts/painel-coordenador.js"></script>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
