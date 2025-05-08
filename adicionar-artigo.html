@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Enviar Artigo - SB Admin 2</title>
+
+  <!-- Fontes e estilos -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-book"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Sistema de Artigos</div>
+      </a>
+
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Início</span>
+        </a>
+      </li>
+
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">Envios</div>
+      <li class="nav-item active">
+        <a class="nav-link" href="adicionar-artigo.html">
+          <i class="fas fa-upload"></i>
+          <span>Enviar Artigo</span>
+        </a>
+      </li>
+
+      <hr class="sidebar-divider d-none d-md-block">
+    </ul>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Autor</span>
+                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Sair
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Conteúdo principal -->
+        <div class="container mt-5">
+          <div class="row">
+            <!-- Formulário de Submissão -->
+            <div class="col-md-6 d-flex align-items-stretch">
+              <div class="card mb-4 shadow h-100 w-100">
+                <div class="card-header">
+                  Submissão de Artigo Científico
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <form id="article-form" class="flex-grow-1 d-flex flex-column">
+                    <div class="form-group mb-2">
+                      <label for="title">Título</label>
+                      <input type="text" id="title" name="title" class="form-control" required>
+                    </div>
+        
+                    <div class="form-group mb-2">
+                      <label for="authors">Autores</label>
+                      <input type="text" id="authors" name="authors" class="form-control" required>
+                    </div>
+        
+                    <div class="form-group mb-2">
+                      <label for="abstract">Resumo</label>
+                      <textarea id="abstract" name="abstract" class="form-control" rows="3" required></textarea>
+                    </div>
+        
+                    <div class="form-group mb-2">
+                      <label for="keywords">Palavras-chave</label>
+                      <input type="text" id="keywords" name="keywords" class="form-control" required>
+                    </div>
+        
+                    <div class="form-group mb-2">
+                      <label for="theme">Área Temática</label>
+                      <input type="text" id="theme" name="theme" class="form-control" required>
+                    </div>
+        
+                    <!-- <div class="form-group mb-3">
+                      <label for="file">Arquivo PDF</label>
+                      <input type="file" id="file" name="file" class="form-control" accept=".pdf" required>
+                    </div> -->
+        
+                    <div class="mt-auto">
+                      <button type="submit" class="btn btn-primary w-100">Enviar Artigo</button>
+                      <p id="message" class="mt-3 text-success" style="display: none;">Artigo enviado com sucesso!</p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Cards de Artigos (adicione aqui os artigos gerados dinamicamente com JS) -->
+            <div class="col-md-6">
+              <div id="artigos-container" class="row">
+                <!-- Cards dinâmicos virão aqui -->
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="text-center my-auto">
+            <span>Copyright © Faculdade Biopark 2025</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Logout Modal -->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sair da Conta?</h5>
+          <button class="close" type="button" data-dismiss="modal"><span>×</span></button>
+        </div>
+        <div class="modal-body">Tem certeza que deseja sair?</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" href="login.html">Sair</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./scripts/adicionar-artigos.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById("message").style.display = "block";
+    }
+  </script>
+</body>
+
+</html>
